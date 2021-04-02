@@ -1,0 +1,9 @@
+1. ifconfig (ethernet is by eth0 ; wifi is by wifi0)
+2. host 137.22.5.8
+3. nslookup cs.carleton.edu
+4. scp fileToSend.txt mantis.mathcs.carleton.edu
+5. lsof -i :80 (for both nmap seems easier if you wanted to get this information about other computers)
+6. lsof -nP -iTCP -sTCP:LISTEN
+7. curl https://cs.carleton.edu/ -o "webpage.txt"
+8. curl -I  https://cs.carleton.edu/
+9. curl -v         (with whatever other parts added seems to show the request and response headers).
