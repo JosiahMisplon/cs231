@@ -1,0 +1,23 @@
+Summary - Eric Gassel and Josiah Misplon
+
+Part 1
+Passwords cracked: 1162
+Total time: 0.867s
+Number of hashes computed: 267751
+Passwords cracked per number of hashes computed: 1162/267751 = .0043 passwords per computed hash
+Time per password cracked: 0.867s / 1162 = 0.000746 seconds per password
+
+Part 2
+Passwords cracked: 1133
+Total time: 11minutes and 29.7s = 689.7s
+Number of hashes computed: 466192417
+Passwords cracked per number of hashes computed: 1133/466192417 = .00000243 passwords per computed hash
+Time per password cracked: 1133/689.7s = 1.64 seconds per password
+
+Factor by which your time per password lengthened, and why.
+
+The time per password lengthened by a factor of (1.64/0.000746) = 2198 because we essentially had '2' passwords per username, since
+each salt is unique to the username, and each username was concatenated with a hashed 'salt+password'. Therefore,
+we had a nested 'for' loop that in affect had to do the hashing work of part (1) but for every individual username
+instead of once for all of the usernames. So, it seems reasonable that we might have roughly 2000 times more time 
+to crack the same number of passwords (since there are 2000ish passwords to attempt to crack).
